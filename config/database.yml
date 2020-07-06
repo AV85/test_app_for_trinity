@@ -1,0 +1,8 @@
+development:
+  host: localhost
+  adapter: postgresql
+  encoding: unicode
+  database: test_app_for_trinity_development
+  pool: 5
+  username: postgres
+  password: postgres
