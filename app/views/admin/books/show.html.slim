@@ -7,9 +7,14 @@
       = render 'admin/shared/flash_notice'
       .card
         .card-body
-          p Книга: #{@book.name}
-          p Авторы:
+          span Книга: #{@book.name}
+          hr
+          span Описание: #{@book.description}
+          hr
+          span Главный автор: #{book_name(@book.author_id)}
+          hr
+          span Авторы:
           ul.list-group
             - @book.authors.each do |author|
               li.list-group-item
-                p = author.name
+                = author.name
