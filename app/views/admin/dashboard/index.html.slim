@@ -1,0 +1,20 @@
+= render 'admin/shared/nav'
+.container
+  .row
+    .col-md-3
+      = render 'admin/shared/left_sidebar'
+    .col-md-9
+      .card
+        .card-body
+          table.table.table-striped
+            thead
+              tr
+                th Автор
+                th Книги
+            tbody
+              - @authors.each do |author|
+                tr
+                  td = author.name
+                  td
+                    - author.books.each do |book|
+                      p = book.name

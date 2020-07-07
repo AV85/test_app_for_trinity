@@ -1,0 +1,33 @@
+= render 'admin/shared/nav'
+.container
+  .row
+    .col-md-3
+      = render 'admin/shared/left_sidebar'
+    .col-md-9
+      = render 'admin/shared/flash_notice'
+      .card
+        .card-body
+          p = link_to 'Создать книгу', new_admin_book_path, class: 'btn btn-success btn-sm'
+          table.table.table-striped
+            thead
+              tr
+                th ID
+                th Название
+                th Описание
+                th Главный автор
+                th Авторы
+                th
+            tbody
+              - @books.each do |book|
+                tr
+                  td = book.id
+                  td = book.name
+                  td = book.description
+                  td = book_name(book.author_id)
+                  td
+                    - book.authors.each do |author|
+                      p = author.name
+                  td
+                    = link_to '', admin_book_path(book), class: 'fa fa-eye', style: 'padding: 4px', title: 'Показать'
+                    = link_to '', edit_admin_book_path(book), class: 'fa fa-edit', style: 'padding: 4px', title: 'Редактировать'
+                    = link_to '', admin_book_path(book), data: { confirm: 'Are you sure?' }, method: :delete, class: 'fa fa-trash', style: 'padding: 4px', title: 'Удалить'

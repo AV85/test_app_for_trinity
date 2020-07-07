@@ -1,0 +1,29 @@
+= render 'admin/shared/nav'
+.container
+  .row
+    .col-md-3
+      = render 'admin/shared/left_sidebar'
+    .col-md-9
+      = render 'admin/shared/flash_notice'
+      .card
+        .card-body
+          p = link_to 'Создать автора', new_admin_author_path, class: 'btn btn-success btn-sm'
+          table.table.table-striped
+            thead
+              tr
+                th ID
+                th Имя автора
+                th Книги автора
+                th
+            tbody
+              - @authors.each do |author|
+                tr
+                  td = author.id
+                  td = author.name
+                  td
+                    - author.books.each do |book|
+                      = book.name.concat(', ')
+                  td
+                    = link_to '', admin_author_path(author), class: 'fa fa-eye', style: 'padding: 4px', title: 'Посмотреть'
+                    = link_to '', edit_admin_author_path(author), class: 'fa fa-edit', style: 'padding: 4px', title: 'Редактировать'
+                    = link_to '', admin_author_path(author), data: { confirm: 'Are you sure?' }, method: :delete, class: 'fa fa-trash', style: 'padding: 4px', title: 'Удалить'

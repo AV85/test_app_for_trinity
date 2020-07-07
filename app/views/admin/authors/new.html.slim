@@ -1,0 +1,12 @@
+= render 'admin/shared/nav'
+.container
+  .row
+    .col-md-3
+      = render 'admin/shared/left_sidebar'
+    .col-md-9
+      = render 'admin/shared/flash_notice'
+      .card
+        .card-body
+          = render 'admin/authors/form'
+          br
+          = link_to 'Back', :back, class: 'btn btn-info btn-sm'

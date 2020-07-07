@@ -1,0 +1,15 @@
+= render 'admin/shared/nav'
+.container
+  .row
+    .col-md-3
+      = render 'admin/shared/left_sidebar'
+    .col-md-9
+      = render 'admin/shared/flash_notice'
+      .card
+        .card-body
+          p Книга: #{@book.name}
+          p Авторы:
+          ul.list-group
+            - @book.authors.each do |author|
+              li.list-group-item
+                p = author.name
