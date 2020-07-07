@@ -11,7 +11,7 @@
           hr
           span Описание: #{@book.description}
           hr
-          span Главный автор: #{book_name(@book.author_id)}
+          span Главный автор: #{book_name(@book.author_id) if @book.author_id}
           hr
           span Авторы:
           ul.list-group
