@@ -3,5 +3,5 @@
   = f.input :name, label: 'Название книги'
   = f.input :description, label: 'Описание книги'
   = f.association :authors, as: :check_boxes, label: 'Авторы книги:'
-  = f.input :author_id, as: :select, label: 'Главный автор:', collection: Author.all.map { |author| [author.name, author.id, {data: {name: author.name}}] }, include_blank: false
+  = f.input :author_id, as: :select, label: 'Главный автор:', collection: Author.all.map { |author| [author.name, author.id, {data: {name: author.name}}] }, include_blank: true
   = f.button :submit, class: "btn btn-primary btn-sm"

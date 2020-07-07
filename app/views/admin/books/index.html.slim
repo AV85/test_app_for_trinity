@@ -23,7 +23,7 @@
                   td = book.id
                   td = book.name
                   td = book.description
-                  td = book_name(book.author_id)
+                  td = book_name(book.author_id) if book.author_id
                   td
                     - book.authors.each do |author|
                       p = author.name

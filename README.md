@@ -9,4 +9,4 @@ HOW TO INSTALL?
 5. Run ```rake db:create```,  ```rake db:migrate```, ```rake db:seed```.
 6. Run ```rails s```
 
-DEMO: test_app_for_trinity.herokuapp.
+DEMO: https://test-app-for-trinity.herokuapp.com/
